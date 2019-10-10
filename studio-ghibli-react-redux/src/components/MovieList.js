@@ -19,7 +19,7 @@ const MovieList = ({
     console.dir(err)
 
     return (
-        <div>
+        <MoviesContainer>
         {isFetching && <h2>Finding all Studio Ghibli films for you...</h2>}
         
         {err && 
@@ -34,7 +34,7 @@ const MovieList = ({
                    return <MovieCard key={movie.id} movie={movie} />
                 })
             }
-        </div>
+        </MoviesContainer>
     )
 }
 
@@ -47,6 +47,15 @@ const mapStateToProps = state => {
 }
 
 export default connect(mapStateToProps, { fetchMovies })(MovieList)
+
+const MoviesContainer = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: 50%;
+    margin: 0 auto;
+    background: teal;
+`;
 
 const ErrorMessage = styled.div`
     background: #FB8E8E;
