@@ -2,6 +2,7 @@ import React, { useEffect } from "react"
 import { connect } from "react-redux"
 
 import { fetchMovies } from "../actions"
+import MovieCard from "./MovieCard"
 
 const MovieList = ({ movies, fetchMovies }) => {
 
@@ -10,8 +11,12 @@ const MovieList = ({ movies, fetchMovies }) => {
     }, [fetchMovies])
 
     return (
-        <div>Movie List
-            <p>{JSON.stringify(movies)}</p>
+        <div>
+            {
+                movies.map(movie => {
+                   return <MovieCard key={movie.id} movie={movie} />
+                })
+            }
         </div>
     )
 }
