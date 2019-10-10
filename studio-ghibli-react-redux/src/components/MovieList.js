@@ -1,7 +1,14 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { connect } from "react-redux"
 
-const MovieList = ({ movies }) => {
+import { fetchMovies } from "../actions"
+
+const MovieList = ({ movies, fetchMovies }) => {
+
+    useEffect(() => {
+        fetchMovies();
+    }, [fetchMovies])
+
     return (
         <div>Movie List
             <p>{JSON.stringify(movies)}</p>
@@ -16,4 +23,4 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps, {})(MovieList)
+export default connect(mapStateToProps, { fetchMovies })(MovieList)
