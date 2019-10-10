@@ -16,10 +16,14 @@ const MovieCard = ({ movie }) => {
 export default MovieCard
 
 const MovieInfo = styled.div`
-    background: pink;
+    background: #52AA8A;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     text-align: left;
-    width: 30%;
+    width: 25%;
+    margin: 20px 0;
+    padding: 20px;
+    border-radius: 5px;
+    border: 2px solid #388659;
 `;

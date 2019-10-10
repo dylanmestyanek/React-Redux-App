@@ -52,9 +52,10 @@ const MoviesContainer = styled.div`
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    width: 50%;
+    width: 80%;
     margin: 0 auto;
-    background: teal;
+    background: #3AAED8;
+    border-radius: 5px;
 `;
 
 const ErrorMessage = styled.div`
