@@ -6,7 +6,7 @@ import MovieList from "./components/MovieList"
 function App() {
   return (
     <div className="App">
-     <h1>hi</h1>
+     <h1>Studio Ghibli Films</h1>
      <MovieList />
     </div>
   );

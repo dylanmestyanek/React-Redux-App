@@ -8,5 +8,5 @@ export const fetchMovies = () => dispatch => {
     dispatch({ type: FETCHING_MOVIES })
     axios.get("https://ghibliapi.herokuapp.com/films")
         .then(res => dispatch({ type: FETCHING_SUCCESS, payload: res.data }))
-        .catch(err => dispatch({ type: FETCHING_FAILURE, payload: err}))
+        .catch(err => dispatch({ type: FETCHING_FAILURE, payload: err.response}))
 }
